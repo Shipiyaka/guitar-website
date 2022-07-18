@@ -1,0 +1,30 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.header-container {
+  display: flex;
+  max-width: 563px;
+  width: 563px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 62px 0;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-li {
+  transition: color 0.2s ease-in-out;
+  &:not(:last-child) {
+    margin-right: 56px;
+  }
+
+  &:hover {
+    color: #000;
+  }
+}

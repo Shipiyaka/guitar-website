@@ -1,0 +1,81 @@
+// .hero {
+// }
+
+.hero-container {
+  position: relative;
+}
+
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 235px 0;
+  max-width: 469px;
+}
+
+.hero-title {
+  margin: 0;
+  margin-bottom: 16px;
+  font-family: "CalSans";
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 67px;
+  color: #121212;
+}
+
+.orange {
+  color: #ff6428;
+}
+
+.hero-subtitle {
+  margin: 0;
+  margin-bottom: 33px;
+}
+
+.get-the-app-item {
+  display: flex;
+  align-items: center;
+}
+
+.get-the-app-btn {
+  margin: 0;
+  margin-right: 40px;
+  &:hover .get-the-app-btn-text {
+    background-color: #fff;
+    color: #ff6428;
+    border: 1px solid #ff6428;
+  }
+}
+
+.get-the-app-btn-text {
+  display: inline-block;
+  padding: 18px 48px;
+  background-color: #ff6428;
+  border-radius: 40px;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.icon-link {
+  &:not(:last-child) {
+    margin-right: 27px;
+  }
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 672px;
+  height: 800px;
+  display: flex;
+  justify-content: right;
+  margin-right: -25px;
+  margin-top: -200px;
+}
+
+.hero-bg-img {
+  width: auto;
+  border-radius: 0px 0px 151px 360px;
+}
