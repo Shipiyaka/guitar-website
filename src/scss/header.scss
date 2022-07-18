@@ -1,17 +1,19 @@
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  // top: 0;
+  // left: 0;
   z-index: 5;
 }
 
 .header-container {
   display: flex;
-  max-width: 563px;
-  width: 563px;
-  justify-content: space-between;
   align-items: center;
-  margin: 62px 0;
+  margin-top: 62px;
+  margin-bottom: 62px;
+}
+
+.logo-item {
+  margin-right: 131px;
 }
 
 .nav {
@@ -19,9 +21,13 @@
 }
 
 .nav-li {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 3px 8px;
+  // border: 10px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
   transition: color 0.2s ease-in-out;
   &:not(:last-child) {
-    margin-right: 56px;
+    margin-right: 40px;
   }
 
   &:hover {
