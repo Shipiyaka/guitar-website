@@ -43,6 +43,7 @@
 		"gulp-webp-html-nosvg": "latest",
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
+		"import-glob-loader": "^1.1.0",
 		"sass": "latest",
 		"swiper": "latest",
 		"vinyl-ftp": "latest",

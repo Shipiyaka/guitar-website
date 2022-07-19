@@ -1,7 +1,5 @@
 .header {
   position: relative;
-  // top: 0;
-  // left: 0;
   z-index: 5;
 }
 
@@ -14,23 +12,4 @@
 
 .logo-item {
   margin-right: 131px;
-}
-
-.nav {
-  display: flex;
-}
-
-.nav-li {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 3px 8px;
-  // border: 10px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  transition: color 0.2s ease-in-out;
-  &:not(:last-child) {
-    margin-right: 40px;
-  }
-
-  &:hover {
-    color: #000;
-  }
 }

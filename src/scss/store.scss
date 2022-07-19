@@ -20,6 +20,7 @@
   line-height: 30px;
   letter-spacing: 0.08em;
   color: #121212;
+  text-transform: uppercase;
 }
 
 .store-sect-text {
@@ -27,15 +28,20 @@
   font-size: 20px;
   line-height: 30px;
   color: #868686;
+  text-transform: lowercase;
 }
 
 .store-sect-items {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .store-sect-item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
 }
 
 .item-img {
