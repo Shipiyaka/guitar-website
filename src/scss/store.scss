@@ -1,7 +1,11 @@
 .store {
+  margin-bottom: 180px;
 }
 
 .store-sect {
+  &:not(:last-child) {
+    margin-bottom: 97px;
+  }
 }
 
 .store-sect-header {
@@ -26,19 +30,26 @@
 }
 
 .store-sect-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .store-sect-item {
 }
 
 .item-img {
+  margin-bottom: 40px;
 }
 
 .item-title {
+  margin: 0;
+  margin-bottom: 7px;
   color: #121212;
 }
 
 .item-subtitle {
+  margin: 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;

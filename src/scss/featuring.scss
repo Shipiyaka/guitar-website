@@ -1,0 +1,17 @@
+.featuring {
+  margin-bottom: 180px;
+}
+
+.brand-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  row-gap: 80px;
+}
+
+.brand-item {
+  margin: 0 auto;
+}
+
+.brand-img {
+}

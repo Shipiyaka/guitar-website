@@ -1,0 +1,41 @@
+.categories {
+  margin-bottom: 220px;
+}
+
+.card-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 220px;
+  height: 280px;
+  background-image: url("@img/card-1.jpg");
+  border-radius: 20px;
+  background-repeat: no-repeat;
+
+  &.second {
+    background-image: url("@img/card-2.jpg");
+  }
+
+  &.third {
+    background-image: url("@img/card-3.jpg");
+  }
+
+  &.fourth {
+    background-image: url("@img/card-4.jpg");
+  }
+}
+
+.card-text {
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
