@@ -7,12 +7,12 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // Передаем значения в глобальную переменную
 global.app = {
-	isBuild: process.argv.includes('--build'),
-	isDev: !process.argv.includes('--build'),
-	path: path,
-	gulp: gulp,
-	plugins: plugins
-}
+  isBuild: process.argv.includes("--build"),
+  isDev: !process.argv.includes("--build"),
+  path: path,
+  gulp: gulp,
+  plugins: plugins,
+};
 
 // Импорт задач
 import { copy } from "./gulp/tasks/copy.js";
@@ -26,21 +26,26 @@ import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { svgSpriteTask } from "./gulp/tasks/svg-sprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
+import { favicons } from "./gulp/tasks/favicons.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
-	gulp.watch(path.watch.files, copy);
-	gulp.watch(path.watch.html, html); //gulp.series(html, ftp)
-	gulp.watch(path.watch.scss, scss);
-	gulp.watch(path.watch.js, js);
-	gulp.watch(path.watch.images, images);
+  gulp.watch(path.watch.files, copy);
+  gulp.watch(path.watch.html, html); //gulp.series(html, ftp)
+  gulp.watch(path.watch.scss, scss);
+  gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.images, images);
+  gulp.watch(path.watch.favicons, favicons);
 }
 
 // Последовательная обработака шрифтов
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, svgSpriteTask));
+const mainTasks = gulp.series(
+  fonts,
+  gulp.parallel(copy, html, scss, js, images, svgSpriteTask, favicons)
+);
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
@@ -49,11 +54,11 @@ const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 // Экспорт сценариев
-export { svgSpriteTask }
-export { dev }
-export { build }
-export { deployZIP }
-export { deployFTP }
+export { svgSpriteTask };
+export { dev };
+export { build };
+export { deployZIP };
+export { deployFTP };
 
 // Выполнение сценария по умолчанию
-gulp.task('default', dev);
+gulp.task("default", dev);

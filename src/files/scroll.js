@@ -1,31 +1,35 @@
-// $(document).ready(function () {
-//   $("a").on("click", function (event) {
-//     if (this.hash !== "") {
-//       event.preventDefault();
-//       var hash = this.hash;
-
-//       $("html, body").animate(
-//         {
-//           scrollTop: $(hash).offset().top,
-//         },
-//         800,
-//         function () {
-//           window.location.hash = hash;
-//         }
-//       );
-//     }
-//   });
-// });
-// jQuery(document).ready(function ($) {
-//   var myHash = location.hash;
-//   location.hash = "";
-//   if (myHash[1] != undefined) {
-//     $("html, body").animate({ scrollTop: $(myHash).offset().top - 110 }, 700);
-//     location.hash = myHash;
-//   }
-// });
-
 AOS.init({ offset: 150, duration: 1000 });
+
+jQuery(document).ready(function () {
+  // Scrolling for anchor links in within the same page
+  jQuery('a[href*="#"]:not([href="#"])').click(function () {
+    _hash = this.hash;
+    _scroll_it(_hash);
+  });
+
+  // scrolling for anchor links coming from a different page
+  var _hash = window.location.hash;
+  if (_hash.length > 0) {
+    window.scrollTo(0, 0);
+
+    setTimeout(function () {
+      _scroll_it(_hash);
+    }, 500);
+  }
+
+  function _scroll_it(_hash) {
+    jQuery("html,body").animate(
+      {
+        scrollTop: jQuery(_hash).offset().top - 150,
+      },
+      500
+    );
+  }
+});
+
+Barba.Dispatcher.on("newPageReady", function (current, prev, container) {
+  history.scrollRestoration = "manual";
+});
 
 barba.init({
   transitions: [
