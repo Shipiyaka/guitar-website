@@ -5,8 +5,7 @@
 .hero-container {
   position: relative;
   z-index: 3;
-  // top: -100px;
-  padding-top: 184px;
+  padding-top: 144px;
 }
 
 .hero-banner {
@@ -43,6 +42,7 @@
 }
 
 .get-the-app-btn-text {
+  transition: all 0.25s ease-in-out;
   display: inline-block;
   padding: 18px 48px;
   background-color: #ff6428;
@@ -55,6 +55,30 @@
 .icon-link {
   &:not(:last-child) {
     margin-right: 27px;
+  }
+}
+
+.icon-link-gp {
+  &:hover::after {
+    content: "";
+  }
+}
+
+.fa-brands {
+  transition: all 0.25s ease-in-out;
+}
+
+.fa-google-play {
+  &:hover {
+    color: rgb(26, 26, 26);
+  }
+}
+
+.fa-apple {
+  font-size: 30px;
+
+  &:hover {
+    color: rgb(26, 26, 26);
   }
 }
 

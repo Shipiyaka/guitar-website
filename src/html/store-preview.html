@@ -1,7 +1,15 @@
-<section class="store" id="store" data-aos="fade-up">
+<section class="store-preview" id="store-preview" data-aos="fade-up">
   <div class="container">
-    <h2 class="website-title">Our <span class="orange">Store</span></h2>
+    <h2 class="website-title">
+      Check out the <span class="orange">Store</span>
+    </h2>
     <div class="store-sect">
+      <div class="store-sect-header">
+        <span class="store-sect-subtitle">New on&nbsp;the board</span>
+        <a href="store-page.html" class="store-sect-text link-reset"
+          >View all</a
+        >
+      </div>
       <div class="store-sect-items">
         @@include('store-sect-item.html', {'title': 'The Essential Les Paul',
         'subtitle': '$1,299.00', 'pic': '@img/item-1.svg'})
@@ -13,6 +21,12 @@
     </div>
 
     <div class="store-sect">
+      <div class="store-sect-header">
+        <span class="store-sect-subtitle">Top selling</span>
+        <a href="store-page.html" class="link-reset"
+          ><span class="store-sect-text">View all</span></a
+        >
+      </div>
       <div class="store-sect-items">
         <a href="#" class="store-sect-item link-reset">
           <img src="@img/item-4.svg" alt="" class="item-img" />

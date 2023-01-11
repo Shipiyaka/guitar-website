@@ -37,6 +37,11 @@
   &:not(:last-child) {
     margin-bottom: 16px;
   }
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #121212;
+  }
 }
 
 .footer-icon {
