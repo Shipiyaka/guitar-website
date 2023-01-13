@@ -1,35 +1,27 @@
 AOS.init({ offset: 150, duration: 1000 });
 
-jQuery(document).ready(function () {
-  // Scrolling for anchor links in within the same page
-  jQuery('a[href*="#"]:not([href="#"])').click(function () {
-    _hash = this.hash;
-    _scroll_it(_hash);
-  });
-
-  // scrolling for anchor links coming from a different page
-  var _hash = window.location.hash;
-  if (_hash.length > 0) {
-    window.scrollTo(0, 0);
-
-    setTimeout(function () {
-      _scroll_it(_hash);
-    }, 500);
+var links = document.querySelectorAll("a[href]");
+var cbk = function (e) {
+  if (e.currentTarget.href === window.location.href) {
+    e.preventDefault();
+    e.stopPropagation();
   }
+};
 
-  function _scroll_it(_hash) {
-    jQuery("html,body").animate(
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener("click", cbk);
+}
+
+function pageScroll(x) {
+  setTimeout(function () {
+    $("html, body").animate(
       {
-        scrollTop: jQuery(_hash).offset().top - 150,
+        scrollTop: $("#" + x).offset().top - 150,
       },
-      500
+      1000
     );
-  }
-});
-
-Barba.Dispatcher.on("newPageReady", function (current, prev, container) {
-  history.scrollRestoration = "manual";
-});
+  }, 1000);
+}
 
 barba.init({
   transitions: [
